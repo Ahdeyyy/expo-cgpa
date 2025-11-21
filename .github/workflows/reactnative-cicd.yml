@@ -130,9 +130,9 @@ jobs:
                   name: "Release v${{ steps.build-info.outputs.version }}"
                   tag_name: "v${{ steps.build-info.outputs.version }}"
                   files: |
-                      ./set-trip-${{steps.build-info.outputs.version}}-dev.apk
-                      ./set-trip-${{steps.build-info.outputs.version}}-prod.apk
-                      ./set-trip-${{steps.build-info.outputs.version}}-prod.aab
+                      ./expo-cgpa-${{steps.build-info.outputs.version}}-dev.apk
+                      ./expo-cgpa-${{steps.build-info.outputs.version}}-prod.apk
+                      ./expo-cgpa-${{steps.build-info.outputs.version}}-prod.aab
                   body_path: changelog.md
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -140,9 +140,9 @@ jobs:
             - name: 📦 Upload build artifacts to GitHub
               uses: actions/upload-artifact@v4
               with:
-                  name: set-trip-${{ steps.build-info.outputs.version }}
+                  name: expo-cgpa-${{ steps.build-info.outputs.version }}
                   path: |
-                      ./set-trip-${{steps.build-info.outputs.version}}-dev.apk
-                      ./set-trip-${{steps.build-info.outputs.version}}-prod.apk
-                      ./set-trip-${{steps.build-info.outputs.version}}-prod.aab
+                      ./expo-cgpa-${{steps.build-info.outputs.version}}-dev.apk
+                      ./expo-cgpa-${{steps.build-info.outputs.version}}-prod.apk
+                      ./expo-cgpa-${{steps.build-info.outputs.version}}-prod.aab
                   retention-days: 7
