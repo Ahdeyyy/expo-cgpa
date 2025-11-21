@@ -1,21 +1,21 @@
+import { Link, useLocalSearchParams, useRouter } from "expo-router";
+import { useState } from "react";
 import {
-  View,
-  Text,
-  ScrollView,
-  RefreshControl,
   ActivityIndicator,
+  RefreshControl,
+  ScrollView,
+  Text,
+  View,
 } from "react-native";
-import { ScreenView } from "@/src/components/ui/ScreenView";
+import { Button } from "../../../src/components/ui/Button";
+import { ScreenView } from "../../../src/components/ui/ScreenView";
+import { gradeToGradePoint } from "../../../src/db";
 import {
-  useGetSemestersQuery,
   useGetCoursesQuery,
   useGetGPAQuery,
-} from "@/src/db/hooks";
-import { useState } from "react";
-import { SelectCourse } from "@/src/db/schema";
-import { gradeToGradePoint } from "@/src/db";
-import { Link, useLocalSearchParams, useRouter } from "expo-router";
-import { Button } from "@/src/components/ui/Button";
+  useGetSemestersQuery,
+} from "../../../src/db/hooks";
+import { SelectCourse } from "../../../src/db/schema";
 
 function SemesterInfoCard({
   semesterName,

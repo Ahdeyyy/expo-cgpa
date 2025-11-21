@@ -4,8 +4,8 @@ import { Checkbox, CheckboxProps } from "expo-checkbox";
 import { useState } from "react";
 import { type TextInputProps, Text, TextInput, View } from "react-native";
 import { withUniwind } from "uniwind";
+import { cn } from "../../../src/utils/utils";
 import { Button } from "./Button";
-import { cn } from "@/src/utils/utils";
 
 const StyledPicker = withUniwind(Picker) as any;
 const StyledPickerItem = withUniwind(Picker.Item);

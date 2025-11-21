@@ -1,9 +1,9 @@
-import { ScreenView } from "@/src/components/ui/ScreenView";
-import { Button } from "@/src/components/ui/Button";
-import { Text, View, ActivityIndicator, ScrollView } from "react-native";
-import { useGetCoursesQuery, useGetSemestersQuery } from "@/src/db/hooks";
-import { useRouter, useLocalSearchParams, Stack } from "expo-router";
 import { Edit02Icon } from "@hugeicons/core-free-icons";
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { ActivityIndicator, ScrollView, Text, View } from "react-native";
+import { Button } from "../../../src/components/ui/Button";
+import { ScreenView } from "../../../src/components/ui/ScreenView";
+import { useGetCoursesQuery, useGetSemestersQuery } from "../../../src/db/hooks";
 
 const GRADE_POINTS: { [key: string]: number } = {
   A: 5.0,
@@ -173,16 +173,14 @@ export default function CourseScreen() {
                 </Text>
               </View>
               <View
-                className={`rounded-full px-4 py-2 ${
-                  course.isElective ? "bg-accent/20" : "bg-secondary/20"
-                }`}
+                className={`rounded-full px-4 py-2 ${course.isElective ? "bg-accent/20" : "bg-secondary/20"
+                  }`}
               >
                 <Text
-                  className={`text-sm font-medium ${
-                    course.isElective
+                  className={`text-sm font-medium ${course.isElective
                       ? "text-accent-foreground"
                       : "text-secondary-foreground"
-                  }`}
+                    }`}
                 >
                   {course.isElective ? "Elective" : "Core"}
                 </Text>
@@ -200,16 +198,14 @@ export default function CourseScreen() {
                 </Text>
               </View>
               <View
-                className={`rounded-full px-4 py-2 ${
-                  course.countsTowardsCGPA ? "bg-primary/10" : "bg-muted/50"
-                }`}
+                className={`rounded-full px-4 py-2 ${course.countsTowardsCGPA ? "bg-primary/10" : "bg-muted/50"
+                  }`}
               >
                 <Text
-                  className={`text-sm font-medium ${
-                    course.countsTowardsCGPA
+                  className={`text-sm font-medium ${course.countsTowardsCGPA
                       ? "text-primary"
                       : "text-muted-foreground"
-                  }`}
+                    }`}
                 >
                   {course.countsTowardsCGPA ? "Yes" : "No"}
                 </Text>

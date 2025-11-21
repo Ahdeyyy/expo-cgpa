@@ -1,24 +1,24 @@
-import { ScreenView } from "@/src/components/ui/ScreenView";
+import { ScreenView } from "../../../src/components/ui/ScreenView";
 
-import { Input, Select, CheckboxInput } from "@/src/components/ui/Input";
-import { Button } from "@/src/components/ui/Button";
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { useEffect, useState } from "react";
 import {
-  Text,
-  View,
+  ActivityIndicator,
   Alert,
-  ScrollView,
   KeyboardAvoidingView,
   Platform,
-  ActivityIndicator,
+  ScrollView,
+  Text,
+  View,
 } from "react-native";
-import { useState, useEffect } from "react";
+import { Button } from "../../../src/components/ui/Button";
+import { CheckboxInput, Input, Select } from "../../../src/components/ui/Input";
 import {
-  useUpdateCourseQuery,
   useDeleteCourseQuery,
   useGetCoursesQuery,
   useGetSemestersQuery,
-} from "@/src/db/hooks";
-import { useRouter, useLocalSearchParams, Stack } from "expo-router";
+  useUpdateCourseQuery,
+} from "../../../src/db/hooks";
 
 const GRADES = [
   { label: "Select Grade", value: "" },

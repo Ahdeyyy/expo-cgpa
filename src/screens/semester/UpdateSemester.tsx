@@ -1,22 +1,22 @@
-import { ScreenView } from "@/src/components/ui/ScreenView";
-import { Input } from "@/src/components/ui/Input";
-import { Button } from "@/src/components/ui/Button";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import { useEffect, useState } from "react";
 import {
-  Text,
-  View,
+  ActivityIndicator,
   Alert,
-  ScrollView,
   KeyboardAvoidingView,
   Platform,
-  ActivityIndicator,
+  ScrollView,
+  Text,
+  View,
 } from "react-native";
-import { useState, useEffect } from "react";
+import { Button } from "../../../src/components/ui/Button";
+import { Input } from "../../../src/components/ui/Input";
+import { ScreenView } from "../../../src/components/ui/ScreenView";
 import {
-  useUpdateSemesterQuery,
   useDeleteSemesterQuery,
   useGetSemestersQuery,
-} from "@/src/db/hooks";
-import { useRouter, useLocalSearchParams } from "expo-router";
+  useUpdateSemesterQuery,
+} from "../../../src/db/hooks";
 
 export default function UpdateSemesterScreen() {
   const router = useRouter();
@@ -259,7 +259,7 @@ export default function UpdateSemesterScreen() {
               onPress={handleCancel}
               className={
                 updateSemesterMutation.isPending ||
-                deleteSemesterMutation.isPending
+                  deleteSemesterMutation.isPending
                   ? "opacity-50"
                   : undefined
               }

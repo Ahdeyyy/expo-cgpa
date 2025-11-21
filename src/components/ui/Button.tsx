@@ -3,11 +3,11 @@ import { HugeiconsIcon } from "@hugeicons/react-native";
 import { Href, useRouter } from "expo-router";
 import { NavigationOptions } from "expo-router/build/global-state/routing";
 import { CustomPressableProps, PressableScale } from "pressto";
+import { ReactNode } from "react";
 import { Text } from "react-native";
 import { tv } from "tailwind-variants";
 import { withUniwind } from "uniwind";
-import { ReactNode } from "react";
-import { cn } from "@/src/utils/utils";
+import { cn } from "../../../src/utils/utils";
 
 export type IconSvgObject = typeof Notification03Icon;
 
@@ -93,12 +93,12 @@ export interface ButtonProps extends CustomPressableProps {
   children?: ReactNode;
   label?: string;
   variant?:
-    | "default"
-    | "secondary"
-    | "ghost"
-    | "outline"
-    | "destructive"
-    | "link";
+  | "default"
+  | "secondary"
+  | "ghost"
+  | "outline"
+  | "destructive"
+  | "link";
   size?: "sm" | "default" | "lg" | "icon";
   onPress?: () => void;
   className?: string;

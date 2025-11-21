@@ -1,17 +1,17 @@
-import { ScreenView } from "@/src/components/ui/ScreenView";
-import { Input } from "@/src/components/ui/Input";
-import { Button } from "@/src/components/ui/Button";
+import { useRouter } from "expo-router";
+import { useState } from "react";
 import {
-  Text,
-  View,
   Alert,
-  ScrollView,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
+  Text,
+  View,
 } from "react-native";
-import { useState } from "react";
-import { useAddSemesterQuery } from "@/src/db/hooks";
-import { useRouter } from "expo-router";
+import { Button } from "../../../src/components/ui/Button";
+import { Input } from "../../../src/components/ui/Input";
+import { ScreenView } from "../../../src/components/ui/ScreenView";
+import { useAddSemesterQuery } from "../../../src/db/hooks";
 
 export default function AddSemesterScreen() {
   const router = useRouter();
